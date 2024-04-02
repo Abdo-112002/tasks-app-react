@@ -1,11 +1,15 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RootRoutes } from "./routes/AuthRouotes";
+import { DashboardRoutes } from "./routes/DashBordRoutes";
 
+const router = createBrowserRouter([RootRoutes, DashboardRoutes]);
 
 function App() {
 
   return (
-    <div className="bg-red-500">
-      hello
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   )
 }
 
