@@ -1,7 +1,8 @@
 import { Button } from 'antd'
 import { ReactNode } from 'react'
 
-const DButton = ({ text, icon, ...props }: { text: string, icon?: ReactNode, [key: string]: string | ReactNode }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const DButton = ({ text, icon, ...props }: { text: string, icon?: ReactNode, [key: string]: string | any }) => {
     return (
         <Button
             type="primary"
