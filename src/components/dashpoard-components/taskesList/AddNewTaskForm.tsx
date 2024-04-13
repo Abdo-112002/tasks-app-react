@@ -11,10 +11,9 @@ const AddNewTaskForm = ({ closeForm }: { closeForm: () => void }) => {
     const [form] = useForm();
     const [allTasksData, addTaskData] = useAtom(tasksData);
     const [openModal,] = useAtom(addTaskModal);
-
     const [saveLoading, setSaveLoading] = useState<boolean>(false);
     const renderAddTaskInputs = AddTaskInputs().map((input) => {
-        const InputTypeComponent = input?.type === "text" ? Input : input?.type === "select" ? Select : TextArea;
+        const InputTypeComponent = input?.type === 'text' ? Input : input?.type === 'select' ? Select : TextArea;
         return (
             <Form.Item
                 key={input?.name}
@@ -64,6 +63,8 @@ const AddNewTaskForm = ({ closeForm }: { closeForm: () => void }) => {
         addTaskData(updatedTasks);
     }
 
+    console.log('render');
+
     useEffect(() => {
         if (openModal.isOpen && openModal.taskId && allTasksData.length) {
             const task = allTasksData.find((task) => task.id === openModal.taskId)
@@ -75,8 +76,8 @@ const AddNewTaskForm = ({ closeForm }: { closeForm: () => void }) => {
         <Form form={form} layout='vertical' onFinish={onSubmitForm}>
             {renderAddTaskInputs}
             <div className='flex items-center gap-4 flex-wrap justify-end'>
-                <DButton type="text" className="" block={false} onClick={cancelForm} htmlType={"button"} text={"cancel"} />
-                <DButton loading={saveLoading} block={false} text={"save"} />
+                <DButton type="text" className="" block={false} onClick={cancelForm} htmlType={'button'} text={'cancel'} />
+                <DButton loading={saveLoading} block={false} text={'save'} />
             </div>
         </Form>
     )

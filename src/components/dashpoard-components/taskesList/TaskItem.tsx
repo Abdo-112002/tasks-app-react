@@ -1,7 +1,7 @@
-import { Popconfirm, Tag } from "antd";
-import { TaskTypes, addTaskModal, tasksData } from "../../../store/tasksPageStore";
-import { DeleteOutlined, EditOutlined, QuestionCircleOutlined } from "@ant-design/icons";
-import { useAtom } from "jotai";
+import { Popconfirm, Tag } from 'antd';
+import { TaskTypes, addTaskModal, tasksData } from '../../../store/tasksPageStore';
+import { DeleteOutlined, EditOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+import { useAtom } from 'jotai';
 
 interface TaskItemProps {
     task: TaskTypes;
@@ -25,8 +25,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
             <div className="flex flex-col items-start gap-2">
                 <h2 className="text-bold text-[20px]">{task.name}</h2>
                 <p className="text-[16px] w-[100%] text-slate-500">{task.desc}</p>
-                <Tag color={task?.status === 1 ? "green" : task?.status === 2 ? "orange" : "blue"}>
-                    {task?.status === 1 ? "Finished" : task?.status === 2 ? "In Progress" : "Not Started"}
+                <Tag color={task?.status === 1 ? 'green' : task?.status === 2 ? 'orange' : 'blue'}>
+                    {task?.status === 1 ? 'Finished' : task?.status === 2 ? 'In Progress' : 'Not Started'}
                 </Tag>
             </div>
             <div className="flex items-center flex-col gap-2">

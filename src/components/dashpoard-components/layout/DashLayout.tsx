@@ -1,10 +1,10 @@
-import { Layout, theme } from "antd";
-import { Content } from "antd/es/layout/layout";
-import { useState } from "react";
-import { Outlet } from "react-router-dom"
-import SidBar from "./SidBar";
-import NavBar from "./NavBar";
-import DashGuard from "../../../hooks/global/DashGuard";
+import { Layout, theme } from 'antd';
+import { Content } from 'antd/es/layout/layout';
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom'
+import SidBar from './SidBar';
+import NavBar from './NavBar';
+import DashGuard from '../../../hooks/global/DashGuard';
 
 
 const DashLayout = () => {

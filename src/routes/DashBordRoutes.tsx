@@ -1,10 +1,10 @@
-import { NotFound } from "../common";
-import { DashLayout } from "../components";
-import { TasksPage } from "../pages";
+import { NotFound } from '../common';
+import { DashLayout } from '../components';
+import { TasksPage } from '../pages';
 
 
 export const DashboardRoutes = {
-    path: "/dashboard",
+    path: '/dashboard',
     element: <DashLayout />,
     errorElement: <NotFound />,
     children: [

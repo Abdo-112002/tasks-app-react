@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useNavigate, useRouteError } from "react-router-dom";
+import { useNavigate, useRouteError } from 'react-router-dom';
 
 const isError = (error: any) => {
-    return typeof error === "object" && error !== null && ("statusText" in error || "message" in error);
+    return typeof error === 'object' && error !== null && ('statusText' in error || 'message' in error);
 };
 
 const Error = () => {
@@ -10,7 +10,7 @@ const Error = () => {
     const navigate = useNavigate();
 
     const handleBack = () => {
-        navigate("/", { replace: true });
+        navigate('/', { replace: true });
     };
 
     return (
@@ -19,7 +19,7 @@ const Error = () => {
                 <h1 className="mb-4 text-4xl font-bold">Oops!</h1>
                 <p className="mb-8 text-lg font-light">Sorry, an unexpected error has occurred.</p>
                 <p className="mb-8 text-xl font-bold">
-                    <i>{isError(error) ? error.statusText : isError(error) ? error.message : ""}</i>
+                    <i>{isError(error) ? error.statusText : isError(error) ? error.message : ''}</i>
                 </p>
                 <button
                     className="rounded-md bg-teal-500 px-4 py-2 text-white"

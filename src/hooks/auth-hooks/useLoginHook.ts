@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { UserInfoProps } from "../../store/authStore";
+import { useNavigate } from 'react-router-dom';
+import { UserInfoProps } from '../../store/authStore';
 
 interface SetLoadingFunction {
     setLoading: (loading: boolean) => void;
@@ -15,7 +15,7 @@ const useLoginHook = ({ setLoading, setUserData }: SetLoadingFunction) => {
         setLoading(true);
         loginTime = setTimeout(() => {
             setUserData(data);
-            navigation("/dashboard");
+            navigation('/dashboard');
             setLoading(false);
         }, 1500);
     };

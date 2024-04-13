@@ -1,5 +1,5 @@
-import { atom } from "jotai";
-import { atomWithStorage } from "jotai/utils";
+import { atom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 
 export interface TaskTypes {
     id: string;
@@ -13,8 +13,8 @@ export interface addTaskModalProps {
     taskId: string | null;
 }
 
-const tasksData = atomWithStorage<TaskTypes[]>("allTasks", []);
-const filterData = atom<TaskTypes[]>([]);
+const tasksData = atomWithStorage<TaskTypes[]>('allTasks', []);
+const filterData = atom<string>('');
 const addTaskModal = atom<addTaskModalProps>({
     isOpen: false,
     taskId: null,
