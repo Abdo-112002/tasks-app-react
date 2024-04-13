@@ -1,10 +1,10 @@
-import { Form, Input } from "antd";
-import { AuthInputs } from "../../Utils/inputs/LoginInputs";
-import { CardWrapper, DButton } from "../../common";
-import useLoginHook from "../../hooks/auth-hooks/useLoginHook";
-import { useMemo, useState } from "react";
-import { userForm } from "../../store/authStore";
-import { useAtom } from "jotai";
+import { Form, Input } from 'antd';
+import { AuthInputs } from '../../Utils/inputs/LoginInputs';
+import { CardWrapper, DButton } from '../../common';
+import useLoginHook from '../../hooks/auth-hooks/useLoginHook';
+import { useMemo, useState } from 'react';
+import { userForm } from '../../store/authStore';
+import { useAtom } from 'jotai';
 
 const SignIn: React.FC = () => {
     const [form] = Form.useForm();
@@ -32,7 +32,7 @@ const SignIn: React.FC = () => {
     }, []);
 
     return (
-        <CardWrapper headerLabel={"Sign in"}>
+        <CardWrapper headerLabel={'Sign in'}>
             <Form
                 form={form}
                 className="w-full"

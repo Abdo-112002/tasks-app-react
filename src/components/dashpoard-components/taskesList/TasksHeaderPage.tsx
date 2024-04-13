@@ -1,23 +1,23 @@
-import { useAtom } from "jotai";
-import { DButton } from "../../../common"
-import { addTaskModal, tasksData } from "../../../store/tasksPageStore";
-import { Dropdown, MenuProps, Modal, Space } from "antd";
-import { useCallback } from "react";
-import { AddNewTaskForm } from "../../../components";
-import { DownOutlined } from "@ant-design/icons";
+import { useAtom } from 'jotai';
+import { DButton } from '../../../common'
+import { addTaskModal, tasksData } from '../../../store/tasksPageStore';
+import { Dropdown, MenuProps, Modal, Space } from 'antd';
+import { useCallback } from 'react';
+import { AddNewTaskForm } from '../../../components';
+import { DownOutlined } from '@ant-design/icons';
 
 
 const items = (addSort: (key: string) => void): MenuProps['items'] => {
     return [
         {
-            label: "last added",
+            label: 'last added',
             key: '0',
-            onClick: () => addSort("0"),
+            onClick: () => addSort('0'),
         },
         {
-            label: "old added",
+            label: 'old added',
             key: '1',
-            onClick: () => addSort("1"),
+            onClick: () => addSort('1'),
         },
     ];
 }
@@ -33,7 +33,7 @@ const TasksHeaderPage = () => {
     }, [openModal, setOpenModal]);
 
     const sortTasksData = (key: string) => {
-        const sortedTasks = allTasks.sort((a, b) => key === "0" ? +b.id - +a.id : +a.id - +b.id);
+        const sortedTasks = allTasks.sort((a, b) => key === '0' ? +b.id - +a.id : +a.id - +b.id);
         sortTasks([...sortedTasks]);
     }
 

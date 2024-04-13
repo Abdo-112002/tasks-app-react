@@ -1,10 +1,10 @@
-import { NotFound } from "../common";
-import { AuthLayout } from "../components";
-import { SignIn } from "../pages";
+import { NotFound } from '../common';
+import { AuthLayout } from '../components';
+import { SignIn } from '../pages';
 
 
 export const RootRoutes = {
-    path: "/",
+    path: '/',
     element: <AuthLayout />,
     errorElement: <NotFound />,
     children: [

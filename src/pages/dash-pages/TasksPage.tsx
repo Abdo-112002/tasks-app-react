@@ -1,4 +1,4 @@
-import { RenderAllTasks, TasksFilter, TasksHeaderPage } from "../../components"
+import { RenderAllTasks, TasksFilter, TasksHeaderPage } from "../../components" // eslint-disable-line
 
 
 const TasksPage = () => {

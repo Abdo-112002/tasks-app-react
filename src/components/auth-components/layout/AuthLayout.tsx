@@ -1,6 +1,6 @@
 
-import { Outlet } from "react-router-dom";
-import LoginGuard from "../../../hooks/global/LoginGuard";
+import { Outlet } from 'react-router-dom';
+import LoginGuard from '../../../hooks/global/LoginGuard';
 
 const AuthLayout = () => {
     return (

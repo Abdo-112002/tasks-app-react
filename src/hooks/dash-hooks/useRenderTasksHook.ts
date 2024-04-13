@@ -1,12 +1,7 @@
-import { useAtomValue } from "jotai";
-import { useEffect } from "react";
-import { tasksData } from "../../store/tasksPageStore";
+import { useEffect } from 'react';
 
 const useRenderTasksHook = (setLading: (state: boolean) => void) => {
-    const allTasks = useAtomValue(tasksData);
-
     useEffect(() => {
-        setLading(true);
         const ladingTime = setTimeout(() => {
             setLading(false);
         }, 800);
@@ -14,7 +9,7 @@ const useRenderTasksHook = (setLading: (state: boolean) => void) => {
         return () => {
             clearTimeout(ladingTime);
         };
-    }, [allTasks, setLading]);
+    }, [setLading]);
 };
 
 export default useRenderTasksHook;

@@ -1,6 +1,6 @@
 import { Button, theme } from 'antd'
 import { Header } from 'antd/es/layout/layout'
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { useAtom } from 'jotai';
 import { userForm } from '../../../store/authStore';
@@ -14,10 +14,10 @@ const NavBar = ({ isOpenSide, openSideBar }: { isOpenSide: boolean, openSideBar:
 
     const logout = () => {
         clearUserData({
-            name: "",
-            password: "",
+            name: '',
+            password: '',
         })
-        navigation("/", { replace: true });
+        navigation('/', { replace: true });
     }
 
     return (

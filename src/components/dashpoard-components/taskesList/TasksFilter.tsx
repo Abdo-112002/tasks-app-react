@@ -1,12 +1,11 @@
-import { Form, Input } from "antd";
-import { TaskFilterInputs } from "../../../Utils/inputs/TasksPageInputs"
-import { useForm } from "antd/es/form/Form";
-import { filterData, tasksData } from "../../../store/tasksPageStore";
-import { useAtom } from "jotai";
+import { Form, Input } from 'antd';
+import { TaskFilterInputs } from '../../../Utils/inputs/TasksPageInputs'
+import { useForm } from 'antd/es/form/Form';
+import { filterData } from '../../../store/tasksPageStore';
+import { useAtom } from 'jotai';
 
 const TasksFilter = () => {
     const [form] = useForm();
-    const [allTasks,] = useAtom(tasksData);
     const [, setFilteredData] = useAtom(filterData);
     let filterTime: number | undefined;
 
@@ -29,8 +28,7 @@ const TasksFilter = () => {
     const handelFilter = (text: string) => {
         clearTimeout(filterTime);
         filterTime = setTimeout(() => {
-            const filteredTasks = allTasks.filter((task) => task?.name?.includes(text));
-            setFilteredData(filteredTasks);
+            setFilteredData(text);
         }, 400);
     }
 
