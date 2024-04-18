@@ -63,8 +63,6 @@ const AddNewTaskForm = ({ closeForm }: { closeForm: () => void }) => {
         addTaskData(updatedTasks);
     }
 
-    console.log('render');
-
     useEffect(() => {
         if (openModal.isOpen && openModal.taskId && allTasksData.length) {
             const task = allTasksData.find((task) => task.id === openModal.taskId)

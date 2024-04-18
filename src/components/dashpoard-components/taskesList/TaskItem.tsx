@@ -1,24 +1,15 @@
 import { Popconfirm, Tag } from 'antd';
-import { TaskTypes, addTaskModal, tasksData } from '../../../store/tasksPageStore';
+import { TaskTypes } from '../../../store/tasksPageStore';
 import { DeleteOutlined, EditOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-import { useAtom } from 'jotai';
+import useTaskActionsHook from '../../../hooks/dash-hooks/useTaskActionsHook';
 
 interface TaskItemProps {
     task: TaskTypes;
 }
 
 const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
-    const [allTasks, updateTasks] = useAtom(tasksData);
-    const [, setOpenModal] = useAtom(addTaskModal);
 
-    const deleteTask = (id: string) => {
-        const newTasks = allTasks.filter((task) => task?.id !== id)
-        updateTasks(newTasks);
-    }
-
-    const updateTask = (id: string) => {
-        setOpenModal({ isOpen: true, taskId: id })
-    }
+    const { deleteTask, updateTask } = useTaskActionsHook();
 
     return (
         <div className="border flex items-center justify-between gap-2 flex-wrap rounded shadow p-4">
