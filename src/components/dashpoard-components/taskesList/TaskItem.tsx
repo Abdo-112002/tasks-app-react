@@ -1,20 +1,23 @@
-import { Popconfirm, Tag } from 'antd';
+import { Checkbox, Popconfirm, Tag } from 'antd';
 import { TaskTypes } from '../../../store/tasksPageStore';
 import { DeleteOutlined, EditOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import useTaskActionsHook from '../../../hooks/dash-hooks/useTaskActionsHook';
+import { CheckboxChangeEvent } from 'antd/es/checkbox';
 
 interface TaskItemProps {
     task: TaskTypes;
+    selectedTask : string[];
+    checkedTaskChange : (id : string) => (e : CheckboxChangeEvent) => void;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+const TaskItem: React.FC<TaskItemProps> = ({ task , checkedTaskChange , selectedTask}) => {
 
     const { deleteTask, updateTask } = useTaskActionsHook();
-
     return (
         <div className="border flex items-center justify-between gap-2 flex-wrap rounded shadow p-4">
             <div className="flex flex-col items-start gap-2">
                 <h2 className="text-bold text-[20px]">{task.name}</h2>
+                <Checkbox onChange={checkedTaskChange(task?.id)} checked={selectedTask.includes(task?.id)}/>
                 <p className="text-[16px] w-[100%] text-slate-500">{task.desc}</p>
                 <Tag color={task?.status === 1 ? 'green' : task?.status === 2 ? 'orange' : 'blue'}>
                     {task?.status === 1 ? 'Finished' : task?.status === 2 ? 'In Progress' : 'Not Started'}
